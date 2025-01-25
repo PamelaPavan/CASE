@@ -1,0 +1,173 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-student-heading" data-cy="StudentCreateUpdateHeading" jhiTranslate="schoolApp.student.home.createOrEditLabel">
+        Criar ou editar Student
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="schoolApp.student.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        @let firstNameRef = editForm.get('firstName')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_firstName" jhiTranslate="schoolApp.student.firstName">First Name</label>
+          <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
+          @if (firstNameRef.invalid && (firstNameRef.dirty || firstNameRef.touched)) {
+            <div>
+              @if (editForm.get('firstName')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">O campo é obrigatório.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let lastNameRef = editForm.get('lastName')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_lastName" jhiTranslate="schoolApp.student.lastName">Last Name</label>
+          <input type="text" class="form-control" name="lastName" id="field_lastName" data-cy="lastName" formControlName="lastName" />
+          @if (lastNameRef.invalid && (lastNameRef.dirty || lastNameRef.touched)) {
+            <div>
+              @if (editForm.get('lastName')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">O campo é obrigatório.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let emailRef = editForm.get('email')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_email" jhiTranslate="schoolApp.student.email">Email</label>
+          <input type="text" class="form-control" name="email" id="field_email" data-cy="email" formControlName="email" />
+          @if (emailRef.invalid && (emailRef.dirty || emailRef.touched)) {
+            <div>
+              @if (editForm.get('email')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">O campo é obrigatório.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let enrollmentDateRef = editForm.get('enrollmentDate')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_enrollmentDate" jhiTranslate="schoolApp.student.enrollmentDate">Enrollment Date</label>
+          <div class="d-flex">
+            <input
+              id="field_enrollmentDate"
+              data-cy="enrollmentDate"
+              type="datetime-local"
+              class="form-control"
+              name="enrollmentDate"
+              formControlName="enrollmentDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          @if (enrollmentDateRef.invalid && (enrollmentDateRef.dirty || enrollmentDateRef.touched)) {
+            <div>
+              @if (editForm.get('enrollmentDate')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">O campo é obrigatório.</small>
+              }
+              <small
+                class="form-text text-danger"
+                [hidden]="!editForm.get('enrollmentDate')?.errors?.datetimelocal"
+                jhiTranslate="entity.validation.datetimelocal"
+                >Este campo é do tipo data/hora.</small
+              >
+            </div>
+          }
+        </div>
+
+        @let streetRef = editForm.get('street')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_street" jhiTranslate="schoolApp.student.street">Street</label>
+          <input type="text" class="form-control" name="street" id="field_street" data-cy="street" formControlName="street" />
+          @if (streetRef.invalid && (streetRef.dirty || streetRef.touched)) {
+            <div>
+              @if (editForm.get('street')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">O campo é obrigatório.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let cityRef = editForm.get('city')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_city" jhiTranslate="schoolApp.student.city">City</label>
+          <input type="text" class="form-control" name="city" id="field_city" data-cy="city" formControlName="city" />
+          @if (cityRef.invalid && (cityRef.dirty || cityRef.touched)) {
+            <div>
+              @if (editForm.get('city')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">O campo é obrigatório.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let stateRef = editForm.get('state')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_state" jhiTranslate="schoolApp.student.state">State</label>
+          <input type="text" class="form-control" name="state" id="field_state" data-cy="state" formControlName="state" />
+          @if (stateRef.invalid && (stateRef.dirty || stateRef.touched)) {
+            <div>
+              @if (editForm.get('state')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">O campo é obrigatório.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let zipCodeRef = editForm.get('zipCode')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_zipCode" jhiTranslate="schoolApp.student.zipCode">Zip Code</label>
+          <input type="text" class="form-control" name="zipCode" id="field_zipCode" data-cy="zipCode" formControlName="zipCode" />
+          @if (zipCodeRef.invalid && (zipCodeRef.dirty || zipCodeRef.touched)) {
+            <div>
+              @if (editForm.get('zipCode')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">O campo é obrigatório.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="field_subjects" jhiTranslate="schoolApp.student.subjects">Subjects</label>
+          <select
+            class="form-control"
+            id="field_subjects"
+            data-cy="subjects"
+            multiple
+            name="subjects"
+            formControlName="subjects"
+            [compareWith]="compareSubject"
+          >
+            @for (subjectOption of subjectsSharedCollection; track $index) {
+              <option [ngValue]="subjectOption">{{ subjectOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancelar</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Salvar</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
