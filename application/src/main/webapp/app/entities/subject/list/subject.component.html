@@ -1,0 +1,120 @@
+<div>
+  <h2 id="page-heading" data-cy="SubjectHeading">
+    <span jhiTranslate="complexSchoolApp.subject.home.title">Subjects</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="complexSchoolApp.subject.home.refreshListLabel">Atualizar lista</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-subject"
+        [routerLink]="['/subject/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="complexSchoolApp.subject.home.createLabel">Criar novo Subject</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (subjects().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="complexSchoolApp.subject.home.notFound">Nenhum Subject encontrado</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">Código</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="name">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.subject.name">Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="description">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.subject.description">Description</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="teachers.id">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.subject.teachers">Teachers</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="students.id">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.subject.students">Students</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (subject of subjects(); track trackId(subject)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/subject', subject.id, 'view']">{{ subject.id }}</a>
+              </td>
+              <td>{{ subject.name }}</td>
+              <td>{{ subject.description }}</td>
+              <td>
+                @for (teachers of subject.teachers; track $index; let last = $last) {
+                  <span>
+                    <a class="form-control-static" [routerLink]="['/teacher', teachers.id, 'view']">{{ teachers.id }}</a
+                    >{{ last ? '' : ', ' }}
+                  </span>
+                }
+              </td>
+              <td>
+                @for (students of subject.students; track $index; let last = $last) {
+                  <span>
+                    <a class="form-control-static" [routerLink]="['/student', students.id, 'view']">{{ students.id }}</a
+                    >{{ last ? '' : ', ' }}
+                  </span>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/subject', subject.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Visualizar</span>
+                  </a>
+
+                  <a [routerLink]="['/subject', subject.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(subject)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Excluir</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

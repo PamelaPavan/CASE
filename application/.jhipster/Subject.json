@@ -1,0 +1,35 @@
+{
+  "annotations": {
+    "changelogDate": "20250125230915"
+  },
+  "applications": ["ComplexSchoolApp"],
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Subject",
+  "relationships": [
+    {
+      "otherEntityName": "teacher",
+      "otherEntityRelationshipName": "subjects",
+      "relationshipName": "teachers",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "subjects",
+      "relationshipName": "students",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,154 @@
+<div>
+  <h2 id="page-heading" data-cy="StudentHeading">
+    <span jhiTranslate="complexSchoolApp.student.home.title">Students</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="complexSchoolApp.student.home.refreshListLabel">Atualizar lista</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-student"
+        [routerLink]="['/student/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="complexSchoolApp.student.home.createLabel">Criar novo Student</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (students().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="complexSchoolApp.student.home.notFound">Nenhum Student encontrado</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">Código</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstName">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.student.firstName">First Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="lastName">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.student.lastName">Last Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="email">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.student.email">Email</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="enrollmentDate">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.student.enrollmentDate">Enrollment Date</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="street">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.student.street">Street</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="city">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.student.city">City</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="state">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.student.state">State</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="zipCode">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.student.zipCode">Zip Code</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="subjects.id">
+              <div class="d-flex">
+                <span jhiTranslate="complexSchoolApp.student.subjects">Subjects</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (student of students(); track trackId(student)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/student', student.id, 'view']">{{ student.id }}</a>
+              </td>
+              <td>{{ student.firstName }}</td>
+              <td>{{ student.lastName }}</td>
+              <td>{{ student.email }}</td>
+              <td>{{ student.enrollmentDate | formatMediumDatetime }}</td>
+              <td>{{ student.street }}</td>
+              <td>{{ student.city }}</td>
+              <td>{{ student.state }}</td>
+              <td>{{ student.zipCode }}</td>
+              <td>
+                @for (subjects of student.subjects; track $index; let last = $last) {
+                  <span>
+                    <a class="form-control-static" [routerLink]="['/subject', subjects.id, 'view']">{{ subjects.id }}</a
+                    >{{ last ? '' : ', ' }}
+                  </span>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/student', student.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Visualizar</span>
+                  </a>
+
+                  <a [routerLink]="['/student', student.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(student)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Excluir</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

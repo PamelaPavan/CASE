@@ -1,0 +1,27 @@
+{
+  "complexSchoolApp": {
+    "subject": {
+      "home": {
+        "title": "Subjects",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Subject",
+        "createOrEditLabel": "Criar ou editar Subject",
+        "notFound": "Nenhum Subject encontrado"
+      },
+      "created": "Um novo Subject foi criado com o identificador {{ param }}",
+      "updated": "Um Subject foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Subject foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Subject {{ id }}?"
+      },
+      "detail": {
+        "title": "Subject"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "teachers": "Teachers",
+      "students": "Students"
+    }
+  }
+}
