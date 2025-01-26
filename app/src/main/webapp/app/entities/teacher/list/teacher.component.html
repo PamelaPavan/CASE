@@ -1,11 +1,11 @@
 <div>
   <h2 id="page-heading" data-cy="TeacherHeading">
-    <span jhiTranslate="schoolApp.teacher.home.title">Teachers</span>
+    <span jhiTranslate="gamaApp.teacher.home.title">Teachers</span>
 
     <div class="d-flex justify-content-end">
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
         <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
-        <span jhiTranslate="schoolApp.teacher.home.refreshListLabel">Atualizar lista</span>
+        <span jhiTranslate="gamaApp.teacher.home.refreshListLabel">Atualizar lista</span>
       </button>
 
       <button
@@ -15,7 +15,7 @@
         [routerLink]="['/teacher/new']"
       >
         <fa-icon icon="plus"></fa-icon>
-        <span jhiTranslate="schoolApp.teacher.home.createLabel">Criar novo Teacher</span>
+        <span jhiTranslate="gamaApp.teacher.home.createLabel">Criar novo Teacher</span>
       </button>
     </div>
   </h2>
@@ -26,7 +26,7 @@
 
   @if (teachers().length === 0) {
     <div class="alert alert-warning" id="no-result">
-      <span jhiTranslate="schoolApp.teacher.home.notFound">Nenhum Teacher encontrado</span>
+      <span jhiTranslate="gamaApp.teacher.home.notFound">Nenhum Teacher encontrado</span>
     </div>
   } @else {
     <div class="table-responsive table-entities" id="entities">
@@ -42,56 +42,28 @@
             </th>
             <th scope="col" jhiSortBy="firstName">
               <div class="d-flex">
-                <span jhiTranslate="schoolApp.teacher.firstName">First Name</span>
+                <span jhiTranslate="gamaApp.teacher.firstName">First Name</span>
 
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="lastName">
               <div class="d-flex">
-                <span jhiTranslate="schoolApp.teacher.lastName">Last Name</span>
+                <span jhiTranslate="gamaApp.teacher.lastName">Last Name</span>
 
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="specialization">
               <div class="d-flex">
-                <span jhiTranslate="schoolApp.teacher.specialization">Specialization</span>
-
-                <fa-icon class="p-1" icon="sort"></fa-icon>
-              </div>
-            </th>
-            <th scope="col" jhiSortBy="street">
-              <div class="d-flex">
-                <span jhiTranslate="schoolApp.teacher.street">Street</span>
-
-                <fa-icon class="p-1" icon="sort"></fa-icon>
-              </div>
-            </th>
-            <th scope="col" jhiSortBy="city">
-              <div class="d-flex">
-                <span jhiTranslate="schoolApp.teacher.city">City</span>
-
-                <fa-icon class="p-1" icon="sort"></fa-icon>
-              </div>
-            </th>
-            <th scope="col" jhiSortBy="state">
-              <div class="d-flex">
-                <span jhiTranslate="schoolApp.teacher.state">State</span>
-
-                <fa-icon class="p-1" icon="sort"></fa-icon>
-              </div>
-            </th>
-            <th scope="col" jhiSortBy="zipCode">
-              <div class="d-flex">
-                <span jhiTranslate="schoolApp.teacher.zipCode">Zip Code</span>
+                <span jhiTranslate="gamaApp.teacher.specialization">Specialization</span>
 
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="subjects.id">
               <div class="d-flex">
-                <span jhiTranslate="schoolApp.teacher.subjects">Subjects</span>
+                <span jhiTranslate="gamaApp.teacher.subjects">Subjects</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
@@ -107,10 +79,6 @@
               <td>{{ teacher.firstName }}</td>
               <td>{{ teacher.lastName }}</td>
               <td>{{ teacher.specialization }}</td>
-              <td>{{ teacher.street }}</td>
-              <td>{{ teacher.city }}</td>
-              <td>{{ teacher.state }}</td>
-              <td>{{ teacher.zipCode }}</td>
               <td>
                 @for (subjects of teacher.subjects; track $index; let last = $last) {
                   <span>

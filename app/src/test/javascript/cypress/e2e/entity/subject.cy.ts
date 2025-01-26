@@ -15,7 +15,7 @@ describe('Subject e2e test', () => {
   const subjectPageUrlPattern = new RegExp('/subject(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const subjectSample = { name: 'reluctantly sugary' };
+  const subjectSample = { name: 'yet meanwhile' };
 
   let subject;
 
@@ -157,11 +157,11 @@ describe('Subject e2e test', () => {
     });
 
     it('should create an instance of Subject', () => {
-      cy.get(`[data-cy="name"]`).type('hmph bid');
-      cy.get(`[data-cy="name"]`).should('have.value', 'hmph bid');
+      cy.get(`[data-cy="name"]`).type('ecliptic cook');
+      cy.get(`[data-cy="name"]`).should('have.value', 'ecliptic cook');
 
-      cy.get(`[data-cy="description"]`).type('outside gosh');
-      cy.get(`[data-cy="description"]`).should('have.value', 'outside gosh');
+      cy.get(`[data-cy="description"]`).type('though wherever hence');
+      cy.get(`[data-cy="description"]`).should('have.value', 'though wherever hence');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

@@ -1,8 +1,8 @@
 {
   "annotations": {
-    "changelogDate": "20250125223854"
+    "changelogDate": "20250125233436"
   },
-  "applications": ["School"],
+  "applications": ["gama"],
   "fields": [
     {
       "fieldName": "firstName",
@@ -16,26 +16,6 @@
     },
     {
       "fieldName": "specialization",
-      "fieldType": "String",
-      "fieldValidateRules": ["required"]
-    },
-    {
-      "fieldName": "street",
-      "fieldType": "String",
-      "fieldValidateRules": ["required"]
-    },
-    {
-      "fieldName": "city",
-      "fieldType": "String",
-      "fieldValidateRules": ["required"]
-    },
-    {
-      "fieldName": "state",
-      "fieldType": "String",
-      "fieldValidateRules": ["required"]
-    },
-    {
-      "fieldName": "zipCode",
       "fieldType": "String",
       "fieldValidateRules": ["required"]
     }

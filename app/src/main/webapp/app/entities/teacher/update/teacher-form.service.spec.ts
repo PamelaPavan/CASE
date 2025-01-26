@@ -23,10 +23,6 @@ describe('Teacher Form Service', () => {
             firstName: expect.any(Object),
             lastName: expect.any(Object),
             specialization: expect.any(Object),
-            street: expect.any(Object),
-            city: expect.any(Object),
-            state: expect.any(Object),
-            zipCode: expect.any(Object),
             subjects: expect.any(Object),
           }),
         );
@@ -41,10 +37,6 @@ describe('Teacher Form Service', () => {
             firstName: expect.any(Object),
             lastName: expect.any(Object),
             specialization: expect.any(Object),
-            street: expect.any(Object),
-            city: expect.any(Object),
-            state: expect.any(Object),
-            zipCode: expect.any(Object),
             subjects: expect.any(Object),
           }),
         );

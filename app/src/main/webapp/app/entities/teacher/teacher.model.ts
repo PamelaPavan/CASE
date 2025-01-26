@@ -5,10 +5,6 @@ export interface ITeacher {
   firstName?: string | null;
   lastName?: string | null;
   specialization?: string | null;
-  street?: string | null;
-  city?: string | null;
-  state?: string | null;
-  zipCode?: string | null;
   subjects?: ISubject[] | null;
 }
 

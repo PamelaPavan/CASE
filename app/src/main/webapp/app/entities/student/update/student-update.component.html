@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-      <h2 id="jhi-student-heading" data-cy="StudentCreateUpdateHeading" jhiTranslate="schoolApp.student.home.createOrEditLabel">
+      <h2 id="jhi-student-heading" data-cy="StudentCreateUpdateHeading" jhiTranslate="gamaApp.student.home.createOrEditLabel">
         Criar ou editar Student
       </h2>
 
@@ -10,14 +10,14 @@
 
         @if (editForm.controls.id.value !== null) {
           <div class="mb-3">
-            <label class="form-label" for="field_id" jhiTranslate="schoolApp.student.id">ID</label>
+            <label class="form-label" for="field_id" jhiTranslate="gamaApp.student.id">ID</label>
             <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
           </div>
         }
 
         @let firstNameRef = editForm.get('firstName')!;
         <div class="mb-3">
-          <label class="form-label" for="field_firstName" jhiTranslate="schoolApp.student.firstName">First Name</label>
+          <label class="form-label" for="field_firstName" jhiTranslate="gamaApp.student.firstName">First Name</label>
           <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
           @if (firstNameRef.invalid && (firstNameRef.dirty || firstNameRef.touched)) {
             <div>
@@ -30,7 +30,7 @@
 
         @let lastNameRef = editForm.get('lastName')!;
         <div class="mb-3">
-          <label class="form-label" for="field_lastName" jhiTranslate="schoolApp.student.lastName">Last Name</label>
+          <label class="form-label" for="field_lastName" jhiTranslate="gamaApp.student.lastName">Last Name</label>
           <input type="text" class="form-control" name="lastName" id="field_lastName" data-cy="lastName" formControlName="lastName" />
           @if (lastNameRef.invalid && (lastNameRef.dirty || lastNameRef.touched)) {
             <div>
@@ -43,7 +43,7 @@
 
         @let emailRef = editForm.get('email')!;
         <div class="mb-3">
-          <label class="form-label" for="field_email" jhiTranslate="schoolApp.student.email">Email</label>
+          <label class="form-label" for="field_email" jhiTranslate="gamaApp.student.email">Email</label>
           <input type="text" class="form-control" name="email" id="field_email" data-cy="email" formControlName="email" />
           @if (emailRef.invalid && (emailRef.dirty || emailRef.touched)) {
             <div>
@@ -56,7 +56,7 @@
 
         @let enrollmentDateRef = editForm.get('enrollmentDate')!;
         <div class="mb-3">
-          <label class="form-label" for="field_enrollmentDate" jhiTranslate="schoolApp.student.enrollmentDate">Enrollment Date</label>
+          <label class="form-label" for="field_enrollmentDate" jhiTranslate="gamaApp.student.enrollmentDate">Enrollment Date</label>
           <div class="d-flex">
             <input
               id="field_enrollmentDate"
@@ -85,7 +85,7 @@
 
         @let streetRef = editForm.get('street')!;
         <div class="mb-3">
-          <label class="form-label" for="field_street" jhiTranslate="schoolApp.student.street">Street</label>
+          <label class="form-label" for="field_street" jhiTranslate="gamaApp.student.street">Street</label>
           <input type="text" class="form-control" name="street" id="field_street" data-cy="street" formControlName="street" />
           @if (streetRef.invalid && (streetRef.dirty || streetRef.touched)) {
             <div>
@@ -98,7 +98,7 @@
 
         @let cityRef = editForm.get('city')!;
         <div class="mb-3">
-          <label class="form-label" for="field_city" jhiTranslate="schoolApp.student.city">City</label>
+          <label class="form-label" for="field_city" jhiTranslate="gamaApp.student.city">City</label>
           <input type="text" class="form-control" name="city" id="field_city" data-cy="city" formControlName="city" />
           @if (cityRef.invalid && (cityRef.dirty || cityRef.touched)) {
             <div>
@@ -111,7 +111,7 @@
 
         @let stateRef = editForm.get('state')!;
         <div class="mb-3">
-          <label class="form-label" for="field_state" jhiTranslate="schoolApp.student.state">State</label>
+          <label class="form-label" for="field_state" jhiTranslate="gamaApp.student.state">State</label>
           <input type="text" class="form-control" name="state" id="field_state" data-cy="state" formControlName="state" />
           @if (stateRef.invalid && (stateRef.dirty || stateRef.touched)) {
             <div>
@@ -124,7 +124,7 @@
 
         @let zipCodeRef = editForm.get('zipCode')!;
         <div class="mb-3">
-          <label class="form-label" for="field_zipCode" jhiTranslate="schoolApp.student.zipCode">Zip Code</label>
+          <label class="form-label" for="field_zipCode" jhiTranslate="gamaApp.student.zipCode">Zip Code</label>
           <input type="text" class="form-control" name="zipCode" id="field_zipCode" data-cy="zipCode" formControlName="zipCode" />
           @if (zipCodeRef.invalid && (zipCodeRef.dirty || zipCodeRef.touched)) {
             <div>
@@ -136,7 +136,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="field_subjects" jhiTranslate="schoolApp.student.subjects">Subjects</label>
+          <label for="field_subjects" jhiTranslate="gamaApp.student.subjects">Subjects</label>
           <select
             class="form-control"
             id="field_subjects"

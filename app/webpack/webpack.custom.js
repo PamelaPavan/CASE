@@ -27,7 +27,7 @@ module.exports = async (config, options, targetOptions) => {
         extensions: ['ts', 'js', 'html'],
       }),
       new WebpackNotifierPlugin({
-        title: 'School',
+        title: 'Gama',
         contentImage: path.join(__dirname, 'logo-jhipster.png'),
       }),
     );
@@ -128,7 +128,6 @@ module.exports = async (config, options, targetOptions) => {
         groupBy: [
           { pattern: './src/main/webapp/i18n/pt-br/*.json', fileName: './i18n/pt-br.json' },
           { pattern: './src/main/webapp/i18n/en/*.json', fileName: './i18n/en.json' },
-          { pattern: './src/main/webapp/i18n/es/*.json', fileName: './i18n/es.json' },
           // jhipster-needle-i18n-language-webpack - JHipster will add/remove languages in this array
         ],
       },

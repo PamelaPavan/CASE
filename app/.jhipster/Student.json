@@ -1,8 +1,8 @@
 {
   "annotations": {
-    "changelogDate": "20250125223853"
+    "changelogDate": "20250125233435"
   },
-  "applications": ["School"],
+  "applications": ["gama"],
   "fields": [
     {
       "fieldName": "firstName",

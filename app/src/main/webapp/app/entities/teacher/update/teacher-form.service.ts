@@ -21,10 +21,6 @@ type TeacherFormGroupContent = {
   firstName: FormControl<ITeacher['firstName']>;
   lastName: FormControl<ITeacher['lastName']>;
   specialization: FormControl<ITeacher['specialization']>;
-  street: FormControl<ITeacher['street']>;
-  city: FormControl<ITeacher['city']>;
-  state: FormControl<ITeacher['state']>;
-  zipCode: FormControl<ITeacher['zipCode']>;
   subjects: FormControl<ITeacher['subjects']>;
 };
 
@@ -52,18 +48,6 @@ export class TeacherFormService {
         validators: [Validators.required],
       }),
       specialization: new FormControl(teacherRawValue.specialization, {
-        validators: [Validators.required],
-      }),
-      street: new FormControl(teacherRawValue.street, {
-        validators: [Validators.required],
-      }),
-      city: new FormControl(teacherRawValue.city, {
-        validators: [Validators.required],
-      }),
-      state: new FormControl(teacherRawValue.state, {
-        validators: [Validators.required],
-      }),
-      zipCode: new FormControl(teacherRawValue.zipCode, {
         validators: [Validators.required],
       }),
       subjects: new FormControl(teacherRawValue.subjects ?? []),

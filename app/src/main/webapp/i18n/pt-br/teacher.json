@@ -1,5 +1,5 @@
 {
-  "schoolApp": {
+  "gamaApp": {
     "teacher": {
       "home": {
         "title": "Teachers",
@@ -21,10 +21,6 @@
       "firstName": "First Name",
       "lastName": "Last Name",
       "specialization": "Specialization",
-      "street": "Street",
-      "city": "City",
-      "state": "State",
-      "zipCode": "Zip Code",
       "subjects": "Subjects"
     }
   }

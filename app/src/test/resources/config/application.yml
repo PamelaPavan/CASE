@@ -15,7 +15,7 @@
 
 spring:
   application:
-    name: School
+    name: gama
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: test
@@ -36,13 +36,13 @@ spring:
           authorities-claim-name: auth
   task:
     execution:
-      thread-name-prefix: school-task-
+      thread-name-prefix: gama-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: school-scheduling-
+      thread-name-prefix: gama-scheduling-
       pool:
         size: 20
   thymeleaf:
@@ -59,9 +59,9 @@ server:
 # ===================================================================
 jhipster:
   clientApp:
-    name: 'schoolApp'
+    name: 'gamaApp'
   mail:
-    from: School@localhost.com
+    from: gama@localhost.com
     base-url: http://127.0.0.1:8080
   logging:
     # To test json console appender
@@ -75,7 +75,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: YjdjODUxMzMzM2YwN2NjY2ZmMjIwODg4YWIzODMwMmQ5YjVkZjYwN2M5MjQ0OTNmY2RmNzAyMzgxNWM5ZWRkYjNjZDg3MjQzZWYxOGFkZGM3MDVhNjUxOTNiYmQ2YTdhM2UxZmQ3ZDAwMzUwNTM4YWFlODU3OTExOTg1NGE5MmY=
+        base64-secret: NzVjNDgzN2NhMjBkZWMxYWMwZTk3ZGI0ZWYyMWQyMmEzMzg5MDlhY2FkZWJjODMzYzY3YzIwYzA2MTUwNzdjYThiZTYyOGVkMTIzYWU2MTIxMTZjOTk1ZDg4NmUyNzg0Zjk0ZjRiMzJiYjM5YTE2N2IxNjM1OWI0OTI0YjZhZjY=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 86400

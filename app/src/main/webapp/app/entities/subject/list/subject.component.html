@@ -1,11 +1,11 @@
 <div>
   <h2 id="page-heading" data-cy="SubjectHeading">
-    <span jhiTranslate="schoolApp.subject.home.title">Subjects</span>
+    <span jhiTranslate="gamaApp.subject.home.title">Subjects</span>
 
     <div class="d-flex justify-content-end">
       <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
         <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
-        <span jhiTranslate="schoolApp.subject.home.refreshListLabel">Atualizar lista</span>
+        <span jhiTranslate="gamaApp.subject.home.refreshListLabel">Atualizar lista</span>
       </button>
 
       <button
@@ -15,7 +15,7 @@
         [routerLink]="['/subject/new']"
       >
         <fa-icon icon="plus"></fa-icon>
-        <span jhiTranslate="schoolApp.subject.home.createLabel">Criar novo Subject</span>
+        <span jhiTranslate="gamaApp.subject.home.createLabel">Criar novo Subject</span>
       </button>
     </div>
   </h2>
@@ -26,7 +26,7 @@
 
   @if (subjects().length === 0) {
     <div class="alert alert-warning" id="no-result">
-      <span jhiTranslate="schoolApp.subject.home.notFound">Nenhum Subject encontrado</span>
+      <span jhiTranslate="gamaApp.subject.home.notFound">Nenhum Subject encontrado</span>
     </div>
   } @else {
     <div class="table-responsive table-entities" id="entities">
@@ -42,27 +42,27 @@
             </th>
             <th scope="col" jhiSortBy="name">
               <div class="d-flex">
-                <span jhiTranslate="schoolApp.subject.name">Name</span>
+                <span jhiTranslate="gamaApp.subject.name">Name</span>
 
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="description">
               <div class="d-flex">
-                <span jhiTranslate="schoolApp.subject.description">Description</span>
+                <span jhiTranslate="gamaApp.subject.description">Description</span>
 
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="teachers.id">
               <div class="d-flex">
-                <span jhiTranslate="schoolApp.subject.teachers">Teachers</span>
+                <span jhiTranslate="gamaApp.subject.teachers">Teachers</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
             <th scope="col" jhiSortBy="students.id">
               <div class="d-flex">
-                <span jhiTranslate="schoolApp.subject.students">Students</span>
+                <span jhiTranslate="gamaApp.subject.students">Students</span>
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>

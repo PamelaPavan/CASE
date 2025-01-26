@@ -18,7 +18,7 @@ logging:
     ROOT: DEBUG
     tech.jhipster: DEBUG
     org.hibernate.SQL: DEBUG
-    com.school: DEBUG
+    com.gamaapp: DEBUG
 
 spring:
   devtools:
@@ -32,8 +32,8 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/School
-    username: School
+    url: jdbc:postgresql://localhost:5432/gama
+    username: gama
     password:
     hikari:
       poolName: Hikari
@@ -63,6 +63,10 @@ server:
 # ===================================================================
 
 jhipster:
+  cache: # Cache configuration
+    ehcache: # Ehcache configuration
+      time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
+      max-entries: 100 # Number of objects in each cache entry
   # CORS is only enabled by default with the "dev" profile
   cors:
     # Allow Ionic for JHipster by default (* no longer allowed in Spring Boot 2.4+)
@@ -78,7 +82,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: YjdjODUxMzMzM2YwN2NjY2ZmMjIwODg4YWIzODMwMmQ5YjVkZjYwN2M5MjQ0OTNmY2RmNzAyMzgxNWM5ZWRkYjNjZDg3MjQzZWYxOGFkZGM3MDVhNjUxOTNiYmQ2YTdhM2UxZmQ3ZDAwMzUwNTM4YWFlODU3OTExOTg1NGE5MmY=
+        base64-secret: NzVjNDgzN2NhMjBkZWMxYWMwZTk3ZGI0ZWYyMWQyMmEzMzg5MDlhY2FkZWJjODMzYzY3YzIwYzA2MTUwNzdjYThiZTYyOGVkMTIzYWU2MTIxMTZjOTk1ZDg4NmUyNzg0Zjk0ZjRiMzJiYjM5YTE2N2IxNjM1OWI0OTI0YjZhZjY=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000

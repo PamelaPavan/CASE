@@ -1,4 +1,3 @@
 org.springframework.test.context.ContextCustomizerFactory = \
-    com.mycompany.myapp.config.\
-    SqlTestContainersSpringContextCustomizerFactory,com.school.config.\
-    SqlTestContainersSpringContextCustomizerFactory
+    gama.com.config.SqlTestContainersSpringContextCustomizerFactory,com.gamaapp.\
+    config.SqlTestContainersSpringContextCustomizerFactory

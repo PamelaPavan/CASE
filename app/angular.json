@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "school": {
+    "gama": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -83,15 +83,15 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "buildTarget": "school:build:development",
+            "buildTarget": "gama:build:development",
             "port": 4200
           },
           "configurations": {
             "production": {
-              "buildTarget": "school:build:production"
+              "buildTarget": "gama:build:production"
             },
             "development": {
-              "buildTarget": "school:build:development"
+              "buildTarget": "gama:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -112,6 +112,7 @@
       "path": "./target/angular/",
       "environment": "all"
     },
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "426f4ec0-91e9-4c2c-9782-989e825ef422"
   }
 }

@@ -15,15 +15,7 @@ describe('Teacher e2e test', () => {
   const teacherPageUrlPattern = new RegExp('/teacher(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const teacherSample = {
-    firstName: 'Calebe',
-    lastName: 'Santos',
-    specialization: 'descent yet sheepishly',
-    street: 'Carvalho Marginal',
-    city: 'Sophia do Descoberto',
-    state: 'which lean rag',
-    zipCode: '02930-274',
-  };
+  const teacherSample = { firstName: 'Ana Luiza', lastName: 'Macedo', specialization: 'aw before skeletal' };
 
   let teacher;
 
@@ -165,26 +157,14 @@ describe('Teacher e2e test', () => {
     });
 
     it('should create an instance of Teacher', () => {
-      cy.get(`[data-cy="firstName"]`).type('Joana');
-      cy.get(`[data-cy="firstName"]`).should('have.value', 'Joana');
+      cy.get(`[data-cy="firstName"]`).type('Mércia');
+      cy.get(`[data-cy="firstName"]`).should('have.value', 'Mércia');
 
-      cy.get(`[data-cy="lastName"]`).type('Macedo');
-      cy.get(`[data-cy="lastName"]`).should('have.value', 'Macedo');
+      cy.get(`[data-cy="lastName"]`).type('Franco');
+      cy.get(`[data-cy="lastName"]`).should('have.value', 'Franco');
 
-      cy.get(`[data-cy="specialization"]`).type('limply');
-      cy.get(`[data-cy="specialization"]`).should('have.value', 'limply');
-
-      cy.get(`[data-cy="street"]`).type('Saraiva Travessa');
-      cy.get(`[data-cy="street"]`).should('have.value', 'Saraiva Travessa');
-
-      cy.get(`[data-cy="city"]`).type('Reis de Nossa Senhora');
-      cy.get(`[data-cy="city"]`).should('have.value', 'Reis de Nossa Senhora');
-
-      cy.get(`[data-cy="state"]`).type('hence comfortable');
-      cy.get(`[data-cy="state"]`).should('have.value', 'hence comfortable');
-
-      cy.get(`[data-cy="zipCode"]`).type('26838-653');
-      cy.get(`[data-cy="zipCode"]`).should('have.value', '26838-653');
+      cy.get(`[data-cy="specialization"]`).type('finally versus');
+      cy.get(`[data-cy="specialization"]`).should('have.value', 'finally versus');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

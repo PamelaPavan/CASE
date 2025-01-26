@@ -16,14 +16,14 @@ describe('Student e2e test', () => {
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
   const studentSample = {
-    firstName: 'Carlos',
-    lastName: 'Melo',
-    email: 'Washington31@live.com',
-    enrollmentDate: '2025-01-25T04:03:07.314Z',
-    street: 'Talita Rodovia',
-    city: 'Lucas de Nossa Senhora',
-    state: 'about rightfully',
-    zipCode: '70453-886',
+    firstName: 'Bryan',
+    lastName: 'Martins',
+    email: 'Tertuliano83@gmail.com',
+    enrollmentDate: '2025-01-25T21:12:02.079Z',
+    street: 'Pablo Avenida',
+    city: 'Saraiva de Nossa Senhora',
+    state: 'except',
+    zipCode: '30178-411',
   };
 
   let student;
@@ -166,30 +166,30 @@ describe('Student e2e test', () => {
     });
 
     it('should create an instance of Student', () => {
-      cy.get(`[data-cy="firstName"]`).type('Meire');
-      cy.get(`[data-cy="firstName"]`).should('have.value', 'Meire');
+      cy.get(`[data-cy="firstName"]`).type('Melissa');
+      cy.get(`[data-cy="firstName"]`).should('have.value', 'Melissa');
 
-      cy.get(`[data-cy="lastName"]`).type('Xavier');
-      cy.get(`[data-cy="lastName"]`).should('have.value', 'Xavier');
+      cy.get(`[data-cy="lastName"]`).type('Franco');
+      cy.get(`[data-cy="lastName"]`).should('have.value', 'Franco');
 
-      cy.get(`[data-cy="email"]`).type('Cecilia57@gmail.com');
-      cy.get(`[data-cy="email"]`).should('have.value', 'Cecilia57@gmail.com');
+      cy.get(`[data-cy="email"]`).type('Giovanna.Albuquerque41@hotmail.com');
+      cy.get(`[data-cy="email"]`).should('have.value', 'Giovanna.Albuquerque41@hotmail.com');
 
-      cy.get(`[data-cy="enrollmentDate"]`).type('2025-01-25T00:11');
+      cy.get(`[data-cy="enrollmentDate"]`).type('2025-01-25T16:05');
       cy.get(`[data-cy="enrollmentDate"]`).blur();
-      cy.get(`[data-cy="enrollmentDate"]`).should('have.value', '2025-01-25T00:11');
+      cy.get(`[data-cy="enrollmentDate"]`).should('have.value', '2025-01-25T16:05');
 
-      cy.get(`[data-cy="street"]`).type('Larissa Travessa');
-      cy.get(`[data-cy="street"]`).should('have.value', 'Larissa Travessa');
+      cy.get(`[data-cy="street"]`).type('Moreira Avenida');
+      cy.get(`[data-cy="street"]`).should('have.value', 'Moreira Avenida');
 
-      cy.get(`[data-cy="city"]`).type('Xavier do Descoberto');
-      cy.get(`[data-cy="city"]`).should('have.value', 'Xavier do Descoberto');
+      cy.get(`[data-cy="city"]`).type('Fabrícia do Sul');
+      cy.get(`[data-cy="city"]`).should('have.value', 'Fabrícia do Sul');
 
-      cy.get(`[data-cy="state"]`).type('yesterday coolly elver');
-      cy.get(`[data-cy="state"]`).should('have.value', 'yesterday coolly elver');
+      cy.get(`[data-cy="state"]`).type('penalise yippee meh');
+      cy.get(`[data-cy="state"]`).should('have.value', 'penalise yippee meh');
 
-      cy.get(`[data-cy="zipCode"]`).type('80348-659');
-      cy.get(`[data-cy="zipCode"]`).should('have.value', '80348-659');
+      cy.get(`[data-cy="zipCode"]`).type('30049-897');
+      cy.get(`[data-cy="zipCode"]`).should('have.value', '30049-897');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

@@ -2,7 +2,7 @@
   <div class="col-8">
     @if (teacher(); as teacherRef) {
       <div>
-        <h2 data-cy="teacherDetailsHeading"><span jhiTranslate="schoolApp.teacher.detail.title">Teacher</span></h2>
+        <h2 data-cy="teacherDetailsHeading"><span jhiTranslate="gamaApp.teacher.detail.title">Teacher</span></h2>
 
         <hr />
 
@@ -15,35 +15,19 @@
           <dd>
             <span>{{ teacherRef.id }}</span>
           </dd>
-          <dt><span jhiTranslate="schoolApp.teacher.firstName">First Name</span></dt>
+          <dt><span jhiTranslate="gamaApp.teacher.firstName">First Name</span></dt>
           <dd>
             <span>{{ teacherRef.firstName }}</span>
           </dd>
-          <dt><span jhiTranslate="schoolApp.teacher.lastName">Last Name</span></dt>
+          <dt><span jhiTranslate="gamaApp.teacher.lastName">Last Name</span></dt>
           <dd>
             <span>{{ teacherRef.lastName }}</span>
           </dd>
-          <dt><span jhiTranslate="schoolApp.teacher.specialization">Specialization</span></dt>
+          <dt><span jhiTranslate="gamaApp.teacher.specialization">Specialization</span></dt>
           <dd>
             <span>{{ teacherRef.specialization }}</span>
           </dd>
-          <dt><span jhiTranslate="schoolApp.teacher.street">Street</span></dt>
-          <dd>
-            <span>{{ teacherRef.street }}</span>
-          </dd>
-          <dt><span jhiTranslate="schoolApp.teacher.city">City</span></dt>
-          <dd>
-            <span>{{ teacherRef.city }}</span>
-          </dd>
-          <dt><span jhiTranslate="schoolApp.teacher.state">State</span></dt>
-          <dd>
-            <span>{{ teacherRef.state }}</span>
-          </dd>
-          <dt><span jhiTranslate="schoolApp.teacher.zipCode">Zip Code</span></dt>
-          <dd>
-            <span>{{ teacherRef.zipCode }}</span>
-          </dd>
-          <dt><span jhiTranslate="schoolApp.teacher.subjects">Subjects</span></dt>
+          <dt><span jhiTranslate="gamaApp.teacher.subjects">Subjects</span></dt>
           <dd>
             @for (subjects of teacherRef.subjects; track $index; let last = $last) {
               <span>
